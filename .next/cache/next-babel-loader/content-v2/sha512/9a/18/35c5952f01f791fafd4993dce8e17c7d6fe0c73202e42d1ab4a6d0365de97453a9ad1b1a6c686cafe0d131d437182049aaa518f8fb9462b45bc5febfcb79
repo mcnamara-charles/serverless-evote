@@ -1,0 +1,1 @@
+{"ast":null,"code":"import data from \"../../../data\";\nexport default (async (req, res) => {\n  console.log(\"/api/voters HIT!\");\n  res.status(200).json(await data.readTable(\"Users\"));\n});","map":null,"metadata":{},"sourceType":"module"}

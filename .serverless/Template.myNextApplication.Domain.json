@@ -1,0 +1,13 @@
+{
+  "region": "us-east-1",
+  "privateZone": false,
+  "domain": "evote.space",
+  "subdomains": [
+    {
+      "domain": "www.evote.space",
+      "distributionId": "E2O1WF13KKSB51",
+      "url": "https://d3dw7lq87w3ift.cloudfront.net",
+      "type": "awsCloudFront"
+    }
+  ]
+}

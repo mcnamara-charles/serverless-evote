@@ -1,0 +1,1 @@
+{"ast":null,"code":"import data from \"../../../data\";\nexport default (async (req, res) => {\n  console.log(\"/api/todos/new HIT!\");\n  const todoDescription = JSON.parse(req.body).todoDescription;\n  await data.createTodo(todoDescription);\n  res.status(200).end(\"OK\");\n});","map":null,"metadata":{},"sourceType":"module"}

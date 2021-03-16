@@ -1,0 +1,1 @@
+{"ast":null,"code":"import data from \"../../../data\";\nexport default (async (req, res) => {\n  console.log(\"/api/voters/[id] HIT!\");\n  const voter = await data.getvoter(req.query.id);\n  res.status(200).json(voter);\n});","map":null,"metadata":{},"sourceType":"module"}

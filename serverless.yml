@@ -1,0 +1,73 @@
+myNextApplication:
+  service: evote
+  component: "@sls-next/serverless-component@1.18.0"
+  custom:
+   defaultRegion: us-west-2
+   defaultEnvironmentGroup: dev
+  provider:
+    name: aws
+    runtime: nodejs12.x
+    stage: dev
+    profile: evote
+  inputs:
+    domain: "evote.space"
+    timeout:
+      defaultLambda: 30
+      apiLambda: 30
+      imageLambda: 30
+    memory:
+      defaultLambda: 2048
+      apiLambda: 2048
+      imageLambda: 2048
+  functions:
+    createUser:
+      handler: data.createuser
+      events:
+        - http:
+            path: data
+            method: post
+      lambdaAtEdge:
+        distribution: 'WebsiteDistribution'
+        eventType: 'origin-request'
+  resources:
+    Resources:
+      usersTable:
+        Type: AWS::DynamoDB::Table
+        Properties:
+          TableName: Users
+          AttributeDefinitions:
+          - AttributeName: userHash
+            AttributeType: N
+          KeySchema:
+          - AttributeName: userHash
+            KeyType: HASH
+      votersTable:
+        Type: AWS::DynamoDB::Table
+        Properties:
+          TableName: Voters
+          AttributeDefinitions:
+          - AttributeName: voterHash
+            AttributeType: N
+          KeySchema:
+          - AttributeName: voterHash
+            KeyType: HASH
+      electionsTable:
+        Type: AWS::DynamoDB::Table
+        Properties:
+          TableName: Elections
+          AttributeDefinitions:
+          - AttributeName: electionHash
+            AttributeType: N
+          KeySchema:
+          - AttributeName: electionHash
+            KeyType: HASH
+      ballotsTable:
+        Type: AWS::DynamoDB::Table
+        Properties:
+          TableName: Ballots
+          AttributeDefinitions:
+          - AttributeName: ballotHash
+            AttributeType: N
+          KeySchema:
+          - AttributeName: ballotHash
+            KeyType: HASH

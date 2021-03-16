@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport { CMS_NAME } from \"../lib/constants\";\nexport default function Intro() {\n  return __jsx(\"section\", {\n    className: \"flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12\"\n  });\n}","map":null,"metadata":{},"sourceType":"module"}

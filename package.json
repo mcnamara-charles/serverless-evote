@@ -1,0 +1,40 @@
+{
+  "name": "evote",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "BUNDLE_AWS_SDK=1 AWS_ACCESS_KEY_ID=1 AWS_SECRET_ACCESS_KEY=1 LOCAL_DYNAMO_DB_ENDPOINT=\"http://localhost:8000\" next dev",
+    "build": "next build",
+    "start": "next start",
+    "dev:infra": "LOCAL_DYNAMO_DB_ENDPOINT=\"http://localhost:8000\" npm run infra",
+    "infra": "node infrastructure/provisionTable"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.861.0",
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.10.0",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.8",
+    "next-iron-session": "^4.1.12",
+    "npm": "^7.6.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "remark": "^11.0.2",
+    "remark-html": "^10.0.0"
+  },
+  "devDependencies": {
+    "@silvermine/serverless-plugin-cloudfront-lambda-edge": "2.1.1",
+    "dotenv": "8.2.0",
+    "postcss-preset-env": "^6.7.0",
+    "serverless": "^1.71.1",
+    "tailwindcss": "^1.4.0"
+  },
+  "description": "This example showcases Next.js's [Static Generation](https://nextjs.org/docs/basic-features/pages) feature using markdown files as the data source.",
+  "main": "postcss.config.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "s667q3a-4gs3l3d",
+  "hash": "Sg5xfKFgrFDBUx6HiQv5Gmp5A8mIAlvYnshI9Meue00=",
+  "description": "API Lambda@Edge for Next CloudFront distribution",
+  "memory": 512,
+  "timeout": 10,
+  "code": "/home/charles/serverless-next.js/packages/serverless-components/nextjs-component/examples/evote/.serverless_nextjs/api-lambda",
+  "shims": [],
+  "handler": "index.handler",
+  "runtime": "nodejs12.x",
+  "env": {},
+  "role": {
+    "arn": "arn:aws:iam::922907188144:role/s667q3a-ichh5c"
+  },
+  "arn": "arn:aws:lambda:us-east-1:922907188144:function:s667q3a-4gs3l3d",
+  "region": "us-east-1"
+}
